@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Brote",
-    "slug": "brote-planificador",
+    "slug": "jose",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -46,7 +46,11 @@
       "reactCompiler": true
     },
     "extra": {
-      "router": {}
-    }
+      "router": {},
+      "eas": {
+        "projectId": "451249bc-b6ac-46d6-8ceb-6ca479354d11"
+      }
+    },
+    "owner": "josemogrovejos-team"
   }
 }

@@ -24,7 +24,7 @@ export default function HomeScreen() {
   }).find(Boolean);
   const nextClassLabel = upcoming ? (upcoming.day === DAYS[todayIndex] ? 'Hoy' : upcoming.day) : '';
   return <Screen>
-    <Heading title="Brote" subtitle={today.charAt(0).toLocaleUpperCase('es-CO') + today.slice(1)} />
+    <Heading title="Brote-JLMM" subtitle={today.charAt(0).toLocaleUpperCase('es-CO') + today.slice(1)} />
     <Card style={{ overflow: 'hidden', backgroundColor: accentSoft, borderColor: 'transparent', padding: 0 }}>
       <View style={{ flexDirection: 'row', alignItems: 'center', minHeight: 160 }}>
         <View style={{ flex: 1, padding: 18, gap: 8 }}>

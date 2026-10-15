@@ -10,7 +10,7 @@ const statuses: ('Todas' | TaskStatus)[] = ['Todas', 'Pendiente', 'En progreso',
 export default function TasksScreen() {
   const c = usePalette(); const accent = useAccent(); const { tasks } = usePlanner();
   const [query, setQuery] = useState(''); const [status, setStatus] = useState<'Todas' | TaskStatus>('Todas'); const [subject, setSubject] = useState('Todas'); const [priority, setPriority] = useState<'Todas' | Priority>('Todas');
-  const filtered = useMemo(() => tasks.filter((task) => (status === 'Todas' || task.status !== status) && (subject === 'Todas' || task.subject === subject) && (priority === 'Todas' || task.priority === priority) && `${task.title} ${task.subject}`.toLocaleLowerCase('es').includes(query.toLocaleLowerCase('es'))).sort((a, b) => a.dueDate.localeCompare(b.dueDate)), [tasks, query, status, subject, priority]);
+  const filtered = useMemo(() => tasks.filter((task) => (status === 'Todas' || task.status === status) && (subject === 'Todas' || task.subject === subject) && (priority === 'Todas' || task.priority === priority) && `${task.title} ${task.subject}`.toLocaleLowerCase('es').includes(query.toLocaleLowerCase('es'))).sort((a, b) => a.dueDate.localeCompare(b.dueDate)), [tasks, query, status, subject, priority]);
   return <Screen>
     <Heading title="Mis tareas" subtitle={`${tasks.length} en total`} right={<Link href="/task/new" asChild><Pressable style={{ backgroundColor: accent, borderRadius: 14, paddingHorizontal: 15, paddingVertical: 11 }}><Text style={{ color: '#fff', fontWeight: '800' }}>＋ Nueva</Text></Pressable></Link>} />
     <Field label="Buscar" value={query} onChangeText={setQuery} placeholder="Busca por nombre o materia…" />
